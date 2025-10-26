@@ -12,10 +12,9 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "morgan": "~1.9.1",
-    "nodemon": "^2.0.2",
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4"
+    "jade": "~1.11.0",
+    "babel/core": "^7.8.4",
+    "babel/preset-env": "^7.8.4"
   },
   "devDependencies": {
     "jest": "^25.1.0"
@@ -28,8 +27,8 @@
     ],
     "ignore": [
       "**/__tests__/**",
-      "*.test.js",
-      "*.spec.js"
+      "**/*.test.js",
+      "**/*.spec.js"
     ]
   },
   "babel": {
@@ -41,14 +40,8 @@
     "testEnvironment": "node"
   },
   "scripts": {
-    "start": "npm run prod",
-    "build": "npm run clean && npm run transpile",
-    "server": "node ./dist-server/bin/www",
-    "dev": "NODE_ENV=development npm run server",
-    "prod": "NODE_ENV=production npm run server",
-    "transpile": "babel ./server --out-dir dist-server",
-    "clean": "rm -rf dist-server",
-    "watch:dev": "nodemon",
-    "test": "jest"
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js",
+    "prod": "NODE_ENV=production node server/app.js"
   }
 }
