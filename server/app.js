@@ -17,4 +17,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// Custom route for student ID
+app.get('/student', (req, res) => {
+  res.send('My Student ID is 21834808. Welcome to Express');
+});
+
 export default app;
